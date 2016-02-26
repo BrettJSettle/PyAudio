@@ -127,7 +127,7 @@ class LetterClassifier(SVC):
 		def plotFunc(fname):
 			return lambda : self.plotWavFile(fname)
 		if len(file_manager.recent_files()) == 0:
-			no_recent = QAction("No Recent Files")
+			no_recent = self.ui.menuRecent_Files.addAction("No Recent Files")
 			no_recent.setEnabled(False)
 			self.ui.menuRecent_Files.addAction(no_recent)
 		for fname in file_manager.recent_files():
