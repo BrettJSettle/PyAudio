@@ -3,7 +3,6 @@ import numpy as np
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 import pyqtgraph as pg
-import script_editor as Script
 import os, sys
 from PyQt4 import uic
 import file_manager
