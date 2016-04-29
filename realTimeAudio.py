@@ -10,7 +10,6 @@ import script_editor
 import scipy.io.wavfile as wav_reader
 
 
-
 class RecorderWidget(QtGui.QWidget):
     x = np.array([0])
     def __init__(self, parent=None):

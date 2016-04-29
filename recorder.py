@@ -3,12 +3,13 @@ import scipy
 import struct
 import pyaudio
 import threading
+import time
 import numpy as np
 
 class SoundPlayer:
     def __init__(self):
         """minimal garb is executed when class is loaded."""
-        self.RATE=48100
+        self.RATE=8000
         self.BUFFERSIZE=2**12 #1024 is a good buffer size
         self.threadsDieNow=False
         self.setup()
@@ -16,7 +17,7 @@ class SoundPlayer:
     def setup(self):
         """initialize sound card."""
         self.p = pyaudio.PyAudio()
-        self.stream = self.p.open(format=pyaudio.paInt16,channels=1,rate=self.RATE, output=True, frames_per_buffer=self.BUFFERSIZE) 
+        self.stream = self.p.open(format=pyaudio.paInt16,channels=2,rate=self.RATE, output=True, frames_per_buffer=self.BUFFERSIZE) 
 
     def write(self, data):
         #zeros = np.zeros((self.BUFFERSIZE * (len(data) // self.BUFFERSIZE + 1),))

@@ -21,7 +21,7 @@ class SoundPlotWidget(pg.PlotWidget):
 		self.bounds = pg.LinearRegionItem()
 		self.disableAutoRange()
 		self.soundLine = pg.PlotDataItem()
-		#sound line can be 2D with stereo. Plot 2 lines?
+
 		self.addItem(self.bounds)
 		self.bounds.setMovable(False)
 		for l in self.bounds.lines:
@@ -54,7 +54,6 @@ class SoundPlotWidget(pg.PlotWidget):
 		x1, x2 = self.bounds.getRegion()
 		x, y = self.soundLine.getData()
 		return y[x1:x2+1]
-
 
 
 class LetterClassifier(SVC):
